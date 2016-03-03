@@ -178,6 +178,8 @@ NSString *meetingNo;
 {
     PluginCommon* pluginCommon = [PluginCommon sharedInstance];
     [pluginCommon login:APP_ID commandId:nil delegate:self];
+    VoiceMeetingModule* voiceMeetingModule = [VoiceMeetingModule sharedInstance];
+    [voiceMeetingModule setDelegateData:nil delegate:self];
 }
 
 //登出
@@ -206,7 +208,7 @@ NSString *meetingNo;
 //发起语音会议
 -(void) createVoiceMeeting{
     VoiceMeetingModule* voiceMeetingModule = [[VoiceMeetingModule alloc] init];
-    [voiceMeetingModule createVoiceMeeting:@"13795480340,15201833743" commandId:nil delegate:self];
+    [voiceMeetingModule createVoiceMeeting:@"18986025547,18501747506" commandId:nil delegate:self];
 }
 
 //解散语音会议
@@ -218,18 +220,18 @@ NSString *meetingNo;
 //踢人语音会议
 -(void) removeVoiceMeetingMember{
     VoiceMeetingModule* voiceMeetingModule = [[VoiceMeetingModule alloc] init];
-    [voiceMeetingModule removeVoiceMeetingMember:meetingNo withMemberStr:@"15201833743" commandId:nil delegate:self];
+    [voiceMeetingModule removeVoiceMeetingMember:meetingNo withMemberStr:@"18501747506" commandId:nil delegate:self];
 }
 
 //加人语音会议
 -(void) addVoiceMeetingMember{
     VoiceMeetingModule* voiceMeetingModule = [[VoiceMeetingModule alloc] init];
-    [voiceMeetingModule inviteVoiceMeetingMembers:meetingNo withMembersStr:@"18801969430" commandId:nil delegate:self];
+    [voiceMeetingModule inviteVoiceMeetingMembers:meetingNo withMembersStr:@"18702125282" commandId:nil delegate:self];
 }
 
 - (void) asynResultCallback:(NSString *)commandId data:(NSString *)data status:(Boolean)status
 {
-    if([data hasPrefix:@"conf"]) {
+    if([data hasPrefix:@"201603"]) {
         meetingNo = data;
     }
     NSLog(@"回调被触发:%@",data);

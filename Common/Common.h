@@ -43,4 +43,14 @@
 #define VOICEMEETING_VOICEMOD     2                          //会议背景模式:有提示音有背景音
 #define VOICEMEETING_CALL_TYPE    YES                        //语音会议呼叫方式：电话呼叫（NO是voip呼叫）
 
+//语音消息配置
+#define MEMBER_MEETING_JOIN       @"6001"                    //加入语音会议
+#define MEMBER_MEETING_EXIT       @"6002"                    //退出语音会议
+#define MEMBER_MEETING_DELETE     @"6002"                    //解散语音会议
+#define MEMBER_MEETING_REMOVE     @"6002"                    //删除语音会议成员
+#define MEMBER_MEETING_REFUSE     @"6002"                    //拒绝语音会议
+
+//当前时间戳格式
+#define CURRENT_TIME_FORMAT       @"yyyyMMdd HHmmss"         
+
 #endif /* Common_h */

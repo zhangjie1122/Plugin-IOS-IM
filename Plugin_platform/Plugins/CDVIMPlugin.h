@@ -46,4 +46,7 @@
 //phoneGap插件：云容联踢出某个会议成员从语音会议
 - (void) removeVoiceMeetingMembers:(CDVInvokedUrlCommand *)command;
 
+//phoneGap插件：云容联接受语音会议消息
+- (void) receiveVoiceMeetingMsg:(CDVInvokedUrlCommand *)command;
+
 @end

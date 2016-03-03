@@ -196,7 +196,12 @@
     }
 }
 
-
+//phoneGap: 云容联接受语音会议消息
+- (void) receiveVoiceMeetingMsg:(CDVInvokedUrlCommand *)command
+{
+    VoiceMeetingModule* voiceMeetingModule = [VoiceMeetingModule sharedInstance];
+    [voiceMeetingModule setDelegateData:command.callbackId delegate:self];
+}
 
 //phoneGap插件：异步处理后，触发委托事件将对应值传给js
 - (void) asynResultCallback:(NSString *)commandId data:(NSString *)data status:(Boolean)status
